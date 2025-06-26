@@ -81,14 +81,14 @@ tbody tr:last-child td {
 
 .center-btn {
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  justify-content: center; /* Centers horizontally */
+  margin: 10px 0;           /* Adds vertical space */
 }
 
 #clear-btn {
   background: #007bff;
   color: white;
-  padding: 10px 18px;
+  padding: 12px 20px;
   font-size: 14px;
   border: none;
   border-radius: 8px;
@@ -99,3 +99,4 @@ tbody tr:last-child td {
 #clear-btn:hover {
   background: #0056b3;
 }
+
