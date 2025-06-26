@@ -78,3 +78,24 @@ th {
 tbody tr:last-child td {
   border-bottom: none;
 }
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#clear-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#clear-btn:hover {
+  background: #0056b3;
+}
