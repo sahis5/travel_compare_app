@@ -26,3 +26,7 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
       console.error("Error fetching results:", err);
     });
 });
+
+document.getElementById('clear-btn').addEventListener('click', function () {
+  document.querySelector('#results tbody').innerHTML = '';
+});
