@@ -1,4 +1,5 @@
-document.getElementById('search-form').addEventListener('submit', function(e) {
+// Handle "Compare" button
+document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const from = document.getElementById('from').value;
@@ -10,7 +11,7 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
     .then(data => {
       const results = data.results;
       const tbody = document.querySelector('#results tbody');
-      tbody.innerHTML = '';
+      tbody.innerHTML = ''; // Clear previous results
       results.forEach(entry => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -27,6 +28,7 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
     });
 });
 
+// Handle "Clear Results" button
 document.getElementById('clear-btn').addEventListener('click', function () {
   document.querySelector('#results tbody').innerHTML = '';
 });
