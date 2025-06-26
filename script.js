@@ -1,4 +1,3 @@
-// Handle "Compare" button
 document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -6,12 +5,14 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
   const to = document.getElementById('to').value;
   const date = document.getElementById('date').value;
 
+  const tbody = document.querySelector('#results tbody');
+  tbody.innerHTML = '<tr><td colspan="4">Loading...</td></tr>';
+
   fetch(`https://travel-compare-backend.onrender.com/compare?from=${from}&to=${to}&date=${date}`)
     .then(res => res.json())
     .then(data => {
       const results = data.results;
-      const tbody = document.querySelector('#results tbody');
-      tbody.innerHTML = ''; // Clear previous results
+      tbody.innerHTML = '';
       results.forEach(entry => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -25,10 +26,6 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
     })
     .catch(err => {
       console.error("Error fetching results:", err);
+      tbody.innerHTML = '<tr><td colspan="4">Failed to load results.</td></tr>';
     });
-});
-
-// Handle "Clear Results" button
-document.getElementById('clear-btn').addEventListener('click', function () {
-  document.querySelector('#results tbody').innerHTML = '';
 });
