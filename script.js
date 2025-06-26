@@ -1,26 +1,28 @@
 document.getElementById('search-form').addEventListener('submit', function(e) {
-  e.preventDefault(); // Stop form from refreshing the page
+  e.preventDefault();
 
-  const dummyData = [
-    { mode: "Bus", provider: "RedBus", price: 850, time: "10h 15m" },
-    { mode: "Train", provider: "IRCTC", price: 620, time: "8h 30m" },
-    { mode: "Flight", provider: "IndiGo", price: 2200, time: "2h 5m" }
-  ];
+  const from = document.getElementById('from').value;
+  const to = document.getElementById('to').value;
+  const date = document.getElementById('date').value;
 
-  const tbody = document.querySelector('#results tbody');
-  tbody.innerHTML = ''; // Clear previous results
-  document.getElementById('clear-btn').addEventListener('click', () => {
-  document.querySelector('#results tbody').innerHTML = '';
-});
-
-  dummyData.forEach(entry => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${entry.mode}</td>
-      <td>${entry.provider}</td>
-      <td>${entry.price}</td>
-      <td>${entry.time}</td>
-    `;
-    tbody.appendChild(row);
-  });
+  fetch(`https://travel-compare-backend.onrender.com/compare?from=${from}&to=${to}&date=${date}`)
+    .then(res => res.json())
+    .then(data => {
+      const results = data.results;
+      const tbody = document.querySelector('#results tbody');
+      tbody.innerHTML = '';
+      results.forEach(entry => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${entry.mode}</td>
+          <td>${entry.provider}</td>
+          <td>${entry.price}</td>
+          <td>${entry.time}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    })
+    .catch(err => {
+      console.error("Error fetching results:", err);
+    });
 });
