@@ -7,8 +7,8 @@ body {
   color: #333;
 }
 
-/* Centered container */
-body > * {
+/* Container */
+main {
   max-width: 600px;
   margin: auto;
   padding: 20px;
@@ -21,7 +21,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Form layout */
+/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -29,13 +29,16 @@ form {
   margin-bottom: 20px;
 }
 
-input, button {
+input,
+button {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
   outline: none;
   transition: 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 input:focus {
@@ -79,10 +82,11 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
+/* Clear button centered */
 .center-btn {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  margin: 10px 0;           /* Adds vertical space */
+  justify-content: center;
+  margin: 10px 0;
 }
 
 #clear-btn {
@@ -100,3 +104,24 @@ tbody tr:last-child td {
   background: #0056b3;
 }
 
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  main {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input,
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  th, td {
+    font-size: 14px;
+    padding: 10px 6px;
+  }
+}
