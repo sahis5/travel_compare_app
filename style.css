@@ -135,3 +135,7 @@ tbody tr:hover {
     padding: 10px 6px;
   }
 }
+
+h1 {
+  font-family: 'Magnetik', sans-serif;
+}
