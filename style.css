@@ -323,121 +323,43 @@ form button:hover {
     gap: 6px;
   }
 }
-@media screen and (max-width: 480px) {
-  html, body {
-    font-size: 15px;
+/* Fade-in animation for the form */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 12px 16px;
-  }
-
-  .logo-box {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .logo-box img {
-    height: 32px;
-  }
-
-  .brand-text {
-    font-size: 18px;
-  }
-
-  #support-link {
-    font-size: 15px;
-    margin-top: 8px;
-    text-align: center;
-  }
-
-  .dropdown {
-    width: 100%;
-    position: relative;
-    right: auto;
-    top: auto;
-    margin-top: 4px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  form input,
-  form button {
-    width: 100%;
-    min-width: 0;
-    font-size: 15px;
-    padding: 12px;
-  }
-
-  input[type="date"] {
-    font-size: 15px;
-  }
-
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+  100% {
     opacity: 1;
-    display: block;
-    cursor: pointer;
-  }
-
-  #clear-btn {
-    font-size: 15px;
-    padding: 12px;
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  main {
-    padding: 16px;
-    margin: 20px 8px;
-  }
-
-  .card {
-    font-size: 15px;
-    padding: 14px;
-    width: 100%;
-  }
-
-  .card .details {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    transform: translateY(0);
   }
 }
-@media screen and (max-width: 480px) {
-  main {
-    width: 100%;
-    max-width: 100%;
-    padding: 16px;
-    box-sizing: border-box;
-  }
 
-  form {
-    width: 100%;
-    max-width: 100%;
-    flex-direction: column;
-    gap: 10px;
-  }
+/* Animate form on load */
+form {
+  animation: fadeInUp 0.8s ease forwards;
+}
 
-  form input,
-  form button {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
+/* Button hover scaling */
+form button {
+  transition: transform 0.2s ease, background 0.3s ease;
+}
 
-  #clear-btn {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
+form button:hover {
+  transform: scale(1.05);
+}
+
+/* Input focus glow */
+form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+}
+#clear-btn {
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#clear-btn:hover {
+  transform: scale(1.05);
 }
 
