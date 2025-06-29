@@ -90,7 +90,7 @@ form {
   margin-bottom: 20px;
 }
 
-form input, form button {
+form input {
   flex: 1 1 200px;
   padding: 14px;
   font-size: 16px;
@@ -107,14 +107,34 @@ input::placeholder {
   color: #e0e0e0;
 }
 
-form button {
-  cursor: pointer;
-  font-weight: bold;
+/* Style specifically for the date input */
+input[type="date"] {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }
 
-form button:hover,
-#clear-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Stylish Search Button */
+form button {
+  flex: 1 1 200px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 12px;
+  background: rgba(0, 123, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+form button:hover {
+  background: rgba(0, 123, 255, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
 }
 
 /* Centered Clear Button */
@@ -131,6 +151,11 @@ form button:hover,
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#clear-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 /* Result Card */
