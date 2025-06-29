@@ -178,3 +178,6 @@ form button:hover {
   justify-content: space-between;
   margin-top: 8px;
 }
+body {
+  height: 100vh;
+}
