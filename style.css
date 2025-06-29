@@ -252,29 +252,13 @@ form button:hover {
 }
 
 @media screen and (max-width: 480px) {
-  .brand-text {
-    font-size: 18px;
-  }
-
-  .card h3 {
-    font-size: 16px;
-  }
-
-  form input::placeholder {
-    font-size: 13px;
-  }
-
-  form button {
-    font-size: 14px;
-  }
-}
-@media screen and (max-width: 480px) {
   body {
     font-size: 14px;
   }
 
   header {
     flex-direction: column;
+    align-items: center;
     padding: 12px 16px;
   }
 
@@ -289,25 +273,30 @@ form button:hover {
   #support-link {
     font-size: 14px;
     margin-top: 8px;
+    text-align: center;
+  }
+
+  .dropdown {
+    width: 100%;
+    position: relative;
   }
 
   form {
     flex-direction: column;
     gap: 8px;
+    width: 100%;
   }
 
-  form input, form button {
-    font-size: 14px;
-    padding: 10px 12px;
-    height: 44px;
+  form input,
+  form button {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+    min-width: 0;
   }
 
   input[type="date"] {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: rgba(255, 255, 255, 0.15);
-    color-scheme: dark;
-    padding-right: 10px;
+    font-size: 15px;
   }
 
   input[type="date"]::-webkit-calendar-picker-indicator {
@@ -324,13 +313,14 @@ form button:hover {
   }
 
   .card {
-    font-size: 14px;
-    padding: 12px;
+    font-size: 15px;
+    padding: 14px;
   }
 
   .card .details {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 6px;
   }
 }
+
