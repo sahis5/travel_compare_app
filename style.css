@@ -333,3 +333,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #results {
   padding-bottom: 40px;
 }
+header h1 img {
+  height: 48px;
+  margin-right: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2); /* soften harsh black */
+}
