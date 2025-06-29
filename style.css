@@ -2,10 +2,14 @@ body {
   margin: 0;
   height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  background: url('https://images.unsplash.com/photo-1709061645359-3c2f4e8b85fa?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+  background-image: url('https://images.unsplash.com/photo-1709061645359-3c2f4e8b85fa');
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   color: #fff;
 }
+
 
 
 /* Header */
