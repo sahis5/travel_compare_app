@@ -340,3 +340,18 @@ header h1 img {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   background: rgba(0, 0, 0, 0.2); /* soften harsh black */
 }
+.logo-box {
+  background: rgba(255, 255, 255, 0.05); /* subtle background */
+  padding: 6px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.logo-box img {
+  height: 48px; /* adjust size here */
+  width: auto;
+  display: block;
+}
