@@ -12,6 +12,7 @@ header {
   padding: 16px 32px;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 header h1 {
@@ -23,6 +24,32 @@ header h1 {
 header h1 img {
   height: 28px;
   margin-right: 10px;
+}
+
+#support-link {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 8px;
+  z-index: 10;
+}
+
+.dropdown div {
+  padding: 10px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown div:hover {
+  background-color: #f1f1f1;
 }
 
 main {

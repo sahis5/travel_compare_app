@@ -42,6 +42,17 @@ document.getElementById('clear-btn').addEventListener('click', function () {
   document.getElementById('results').innerHTML = '';
 });
 
-document.getElementById('support-link').addEventListener('click', function () {
-  alert("Contact Us:\n📧 sahisnp@gmail.com\n🔗 www.linkedin.com/in/mohammed-sahis-n-p-b08141227");
+// Dropdown toggle
+const supportLink = document.getElementById('support-link');
+const dropdown = document.getElementById('support-dropdown');
+supportLink.addEventListener('click', function () {
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+document.getElementById('email-us').addEventListener('click', function () {
+  window.location.href = 'mailto:sahisnp@gmail.com';
+});
+
+document.getElementById('linkedin-us').addEventListener('click', function () {
+  window.open('https://www.linkedin.com/in/mohammed-sahis-n-p-b08141227', '_blank');
 });
