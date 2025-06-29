@@ -204,3 +204,20 @@ form button:hover {
 body {
   height: 100vh;
 }
+.dropdown a.dropdown-link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.dropdown a.dropdown-link div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  white-space: nowrap;
+}
+
+.dropdown a.dropdown-link div:hover {
+  background-color: #f1f1f1;
+}

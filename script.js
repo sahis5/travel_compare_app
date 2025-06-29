@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = 'mailto:sahisnp@gmail.com';
   });
 
-  // LinkedIn click
-  document.getElementById('LinkedIn').addEventListener('click', function (e) {
+  // LinkedIn click (✔ fixed the ID here)
+  document.getElementById('linkedin-us').addEventListener('click', function (e) {
     e.stopPropagation();
     window.open('https://www.linkedin.com/in/mohammed-sahis-n-p-b08141227', '_blank');
   });
