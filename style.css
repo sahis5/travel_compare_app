@@ -78,6 +78,7 @@ header {
   width: max-content;
 }
 .dropdown.open {
+  display: block;
   max-height: 200px; /* enough to show contents */
   opacity: 1;
 }
