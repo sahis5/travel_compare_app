@@ -43,5 +43,5 @@ document.getElementById('clear-btn').addEventListener('click', function () {
 });
 
 document.getElementById('support-link').addEventListener('click', function () {
-  alert("Contact Us:\n📧 sahisnp@gmail.com\n🔗 linkedin.com/in/sahisnp");
+  alert("Contact Us:\n📧 sahisnp@gmail.com\n🔗 www.linkedin.com/in/mohammed-sahis-n-p-b08141227");
 });
