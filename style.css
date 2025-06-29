@@ -65,7 +65,10 @@ header {
 
 /* Dropdown */
 .dropdown {
-  display: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   position: absolute;
   right: 0;
   top: 100%;
@@ -76,6 +79,11 @@ header {
   z-index: 10;
   width: max-content;
 }
+.dropdown.open {
+  max-height: 200px; /* enough to show contents */
+  opacity: 1;
+}
+
 
 .dropdown div {
   padding: 12px 20px;
@@ -386,5 +394,21 @@ form input:focus {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Fade-down animation keyframes */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate header on load */
+header {
+  animation: fadeDown 0.8s ease forwards;
 }
 

@@ -50,12 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   supportLink.addEventListener('click', function (e) {
     e.stopPropagation();
-    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    dropdown.classList.toggle('open');
   });
 
   window.addEventListener('click', () => {
-    dropdown.style.display = 'none';
+    dropdown.classList.remove('open');
   });
+
 
   document.getElementById('email-us').addEventListener('click', function (e) {
     e.stopPropagation();
