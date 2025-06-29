@@ -139,6 +139,16 @@ form button:hover {
 }
 
 .dropdown .icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
+.dropdown div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
