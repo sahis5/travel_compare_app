@@ -41,3 +41,7 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
 document.getElementById('clear-btn').addEventListener('click', function () {
   document.getElementById('results').innerHTML = '';
 });
+
+document.getElementById('support-link').addEventListener('click', function () {
+  alert("Contact Us:\n📧 sahisnp@gmail.com\n🔗 linkedin.com/in/sahisnp");
+});
