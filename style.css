@@ -19,15 +19,26 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 16px 32px;
-  background: rgba(255, 255, 255, 0.15); /* translucent */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle bevel */
-  backdrop-filter: blur(12px); /* glass blur */
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  border-bottom: none;
   color: #000;
   position: relative;
   z-index: 100;
+  border-radius: 0 0 16px 16px; /* optional for rounded bottom */
 }
+
 
 
 header h1 {
