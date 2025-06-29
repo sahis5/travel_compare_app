@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById('search-form');
   const resultsContainer = document.getElementById('results');
+  const loader = document.getElementById('loader');
+  const clearBtnContainer = document.querySelector('.center-btn');
   const dropdown = document.getElementById('support-dropdown');
   const supportLink = document.getElementById('support-link');
 
@@ -10,18 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const from = document.getElementById('from').value.trim();
     const to = document.getElementById('to').value.trim();
 
-    document.getElementById('loader').style.display = 'block';
+    loader.style.display = 'block';
     resultsContainer.innerHTML = '';
-    document.getElementById('clear-btn').classList.remove('visible');
-
-
+    clearBtnContainer.classList.add('hidden');
 
     fetch(`https://travel-compare-backend.onrender.com/compare?from=${from}&to=${to}`)
       .then(res => res.json())
       .then(data => {
+        loader.style.display = 'none';
         resultsContainer.innerHTML = '';
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('clear-btn').classList.add('visible');
+        clearBtnContainer.classList.remove('hidden');
 
         const results = data.results;
         if (!results || results.length === 0) {
@@ -40,22 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
               <span><strong>Duration:</strong> ${entry.time}</span>
             </div>
           `;
-          // ✅ Add staggered animation delay
+          // Add staggered animation delay
           card.style.animationDelay = `${index * 0.15}s`;
           resultsContainer.appendChild(card);
         });
       })
       .catch(() => {
-        document.getElementById('loader').style.display = 'none';
+        loader.style.display = 'none';
         resultsContainer.innerHTML = '<p>Error fetching results.</p>';
       });
   });
 
   document.getElementById('clear-btn').addEventListener('click', () => {
     resultsContainer.innerHTML = '';
-    document.getElementById('clear-btn').classList.remove('visible');
+    clearBtnContainer.classList.add('hidden');
   });
-
 
   supportLink.addEventListener('click', function (e) {
     e.stopPropagation();
@@ -65,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('click', () => {
     dropdown.classList.remove('open');
   });
-
 
   document.getElementById('email-us').addEventListener('click', function (e) {
     e.stopPropagation();

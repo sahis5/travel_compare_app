@@ -443,4 +443,7 @@ header {
     transform: rotate(360deg);
   }
 }
+.center-btn.hidden {
+  display: none;
+}
 
