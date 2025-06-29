@@ -411,17 +411,7 @@ form input:focus {
 header {
   animation: fadeDown 0.8s ease forwards;
 }
-#clear-btn {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
 
-/* When active, fade in */
-#clear-btn.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
 /* Loader hidden by default */
 .loader {
   display: none;
