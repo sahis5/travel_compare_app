@@ -1,10 +1,10 @@
-/* Base reset and font */
+/* Reset */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #121212;
-  color: #e0e0e0;
+  color: #f0f0f0;
 }
 
 /* Container */
@@ -26,29 +26,31 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
-input,
-button {
-  padding: 12px;
+input, button {
+  padding: 14px;
   font-size: 16px;
   border: 1px solid #333;
   border-radius: 8px;
-  outline: none;
-  transition: 0.2s ease;
-  width: 100%;
-  box-sizing: border-box;
   background: #1e1e1e;
-  color: #e0e0e0;
+  color: #f0f0f0;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+input::placeholder {
+  color: #888;
 }
 
 input:focus {
   border-color: #007bff;
-  box-shadow: 0 0 0 2px #007bff55;
+  background: #222;
+  outline: none;
 }
 
+/* Buttons */
 button {
   background: #007bff;
   color: white;
@@ -67,40 +69,34 @@ table {
   background: #1e1e1e;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
-th,
-td {
+th, td {
   padding: 14px 10px;
   border-bottom: 1px solid #333;
   text-align: center;
 }
 
 th {
-  background: #2c2c2c;
+  background: #2a2a2a;
   font-weight: 500;
-  color: #cccccc;
 }
 
 tbody tr:last-child td {
   border-bottom: none;
 }
 
-tbody tr:hover {
-  background: #2a2a2a;
-}
-
-/* Clear button centered */
+/* Clear Button Container */
 .center-btn {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 #clear-btn {
-  background: #333;
-  color: #e0e0e0;
+  background: #444;
+  color: #f0f0f0;
   padding: 12px 20px;
   font-size: 14px;
   border: none;
@@ -110,32 +106,5 @@ tbody tr:hover {
 }
 
 #clear-btn:hover {
-  background: #444;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  main {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  input,
-  button {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  th,
-  td {
-    font-size: 14px;
-    padding: 10px 6px;
-  }
-}
-
-h1 {
-  font-family: 'Magnetik', sans-serif;
+  background: #666;
 }
