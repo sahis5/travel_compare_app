@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
 
-        results.forEach(entry => {
+        results.forEach((entry, index) => {
           const card = document.createElement('div');
           card.className = 'card';
           card.innerHTML = `
@@ -33,9 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
               <span><strong>Price:</strong> ₹${entry.price}</span>
               <span><strong>Duration:</strong> ${entry.time}</span>
             </div>
-          `;
-          resultsContainer.appendChild(card);
+         `;
+         // Add staggered animation delay
+        card.style.animationDelay = `${index * 0.15}s`;
+        resultsContainer.appendChild(card);
         });
+
       })
       .catch(() => {
         resultsContainer.innerHTML = '<p>Error fetching results.</p>';
