@@ -2,10 +2,14 @@ body {
   margin: 0;
   height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  background: url('background.jpg') no-repeat center center fixed;
+  background: url('https://picsum.photos/1920/1080') no-repeat center center fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   color: #fff;
 }
+
 
 
 
