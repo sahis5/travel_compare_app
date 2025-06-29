@@ -127,7 +127,9 @@ form button:hover {
 /* Clear Button */
 .center-btn {
   text-align: center;
+  margin: 16px 0 32px; /* Added more bottom margin */
 }
+
 
 #clear-btn {
   padding: 10px 18px;
@@ -295,4 +297,39 @@ form button:hover {
   .card h3 {
     font-size: 16px;
   }
+}
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 12px;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  form input,
+  form button {
+    flex: 1 1 100%;
+  }
+
+  input[type="date"] {
+    width: 100%;
+  }
+
+  .card .details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 1;
+  display: block;
+}
+#results {
+  padding-bottom: 40px;
 }
