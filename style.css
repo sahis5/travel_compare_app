@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,8 +35,11 @@ header h1 {
 }
 
 header h1 img {
-  height: 24px;
-  margin-right: 10px;
+  height: 48px;
+  margin-right: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #support-link {
@@ -75,6 +79,29 @@ header h1 img {
   height: 18px;
 }
 
+/* Logo box */
+.logo-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.logo-box img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.brand-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
 /* Main */
 main {
   max-width: 1000px;
@@ -111,6 +138,8 @@ input::placeholder {
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
+  opacity: 1;
+  display: block;
 }
 
 form button {
@@ -127,9 +156,8 @@ form button:hover {
 /* Clear Button */
 .center-btn {
   text-align: center;
-  margin: 16px 0 32px; /* Added more bottom margin */
+  margin: 16px 0 32px;
 }
-
 
 #clear-btn {
   padding: 10px 18px;
@@ -165,36 +193,25 @@ form button:hover {
 }
 
 /* Responsive */
-@media screen and (max-width: 768px) {
-  form {
-    flex-direction: column;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header h1 {
-    font-size: 18px;
-  }
-}
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px 16px;
+    padding: 16px;
     text-align: left;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   header h1 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
 
   #support-link {
-    align-self: flex-end;
     font-size: 14px;
+    margin-top: 12px;
+    align-self: flex-end;
   }
 
   form {
@@ -204,54 +221,15 @@ form button:hover {
 
   form input,
   form button {
-    flex: 1 1 100%;
+    width: 100%;
     font-size: 15px;
     padding: 12px;
-  }
-
-  #clear-btn {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .card .details {
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  main {
-    margin: 20px 10px;
-    padding: 16px;
-  }
-}
-/* === Responsive Adjustments === */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-    text-align: left;
-  }
-
-  form {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  form input, form button {
-    width: 100%;
   }
 
   input[type="date"] {
     width: 100%;
     padding: 14px;
     font-size: 16px;
-  }
-
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    display: block;
-    filter: invert(1);
   }
 
   .center-btn {
@@ -261,14 +239,23 @@ form button:hover {
 
   #clear-btn {
     width: 100%;
+    font-size: 14px;
+    padding: 10px;
   }
 
   .card {
     font-size: 15px;
   }
 
-  #support-link {
-    margin-top: 12px;
+  .card .details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  main {
+    margin: 20px 10px;
+    padding: 16px;
   }
 
   .dropdown {
@@ -298,60 +285,7 @@ form button:hover {
     font-size: 16px;
   }
 }
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-    text-align: center;
-    gap: 12px;
-  }
 
-  form {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  form input,
-  form button {
-    flex: 1 1 100%;
-  }
-
-  input[type="date"] {
-    width: 100%;
-  }
-
-  .card .details {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-}
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-  opacity: 1;
-  display: block;
-}
 #results {
   padding-bottom: 40px;
-}
-header h1 img {
-  height: 48px;
-  margin-right: 12px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  background: rgba(0, 0, 0, 0.2); /* soften harsh black */
-}
-.logo-box {
-  background: rgba(255, 255, 255, 0.05); /* subtle background */
-  padding: 6px;
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-.logo-box img {
-  height: 48px; /* adjust size here */
-  width: auto;
-  display: block;
 }
