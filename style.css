@@ -2,14 +2,10 @@ body {
   margin: 0;
   height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('https://unsplash.com/photos/a-black-background-with-a-blue-abstract-design-OfdOEdGYiuk');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('background.jpg') no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed;
   color: #fff;
 }
-
 
 
 
