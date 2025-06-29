@@ -1,4 +1,4 @@
-
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,26 +26,41 @@ header {
   color: #fff;
   border-radius: 0 0 24px 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
-header h1 {
-  font-size: 20px;
+.logo-box {
   display: flex;
   align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  max-width: 100%;
 }
 
-header h1 img {
-  height: 48px;
-  margin-right: 12px;
+.logo-box img {
+  height: 40px;
+  width: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.brand-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 #support-link {
   position: relative;
   cursor: pointer;
   color: #62b0ff;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 /* Dropdown */
@@ -59,6 +74,7 @@ header h1 img {
   margin-top: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   z-index: 10;
+  width: max-content;
 }
 
 .dropdown div {
@@ -79,29 +95,6 @@ header h1 img {
   height: 18px;
 }
 
-/* Logo box */
-.logo-box {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 10px 16px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.logo-box img {
-  height: 48px;
-  width: auto;
-  display: block;
-}
-
-.brand-text {
-  font-size: 20px;
-  font-weight: 600;
-  color: white;
-}
-
 /* Main */
 main {
   max-width: 1000px;
@@ -120,8 +113,10 @@ form {
   margin-bottom: 24px;
 }
 
-form input, form button {
+form input,
+form button {
   flex: 1 1 200px;
+  width: 100%;
   padding: 14px;
   border-radius: 10px;
   border: none;
@@ -134,6 +129,15 @@ form input, form button {
 
 input::placeholder {
   color: #ddd;
+  font-size: 14px;
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  width: 100%;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -156,7 +160,7 @@ form button:hover {
 /* Clear Button */
 .center-btn {
   text-align: center;
-  margin: 16px 0 32px;
+  margin: 24px 0 32px;
 }
 
 #clear-btn {
@@ -167,6 +171,7 @@ form button:hover {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  width: 100%;
 }
 
 #clear-btn:hover {
@@ -174,262 +179,92 @@ form button:hover {
 }
 
 /* Results */
+#results {
+  padding-bottom: 40px;
+}
+
 .card {
   background: rgba(255, 255, 255, 0.15);
   padding: 16px;
   margin-bottom: 16px;
   border-radius: 12px;
   color: #fff;
+  font-size: 16px;
 }
 
 .card h3 {
   margin-bottom: 8px;
+  font-size: 18px;
 }
 
 .card .details {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Fixes */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
   header {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-    text-align: left;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 12px;
+    padding: 12px 16px;
   }
 
-  header h1 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  #support-link {
-    font-size: 14px;
-    margin-top: 12px;
-    align-self: flex-end;
+  .logo-box {
+    justify-content: center;
+    width: 100%;
   }
 
   form {
     flex-direction: column;
-    gap: 12px;
   }
 
   form input,
   form button {
     width: 100%;
     font-size: 15px;
-    padding: 12px;
   }
 
   input[type="date"] {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-  }
-
-  .center-btn {
-    margin-top: 20px;
-    text-align: center;
+    font-size: 15px;
   }
 
   #clear-btn {
-    width: 100%;
     font-size: 14px;
-    padding: 10px;
-  }
-
-  .card {
-    font-size: 15px;
   }
 
   .card .details {
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
-  }
-
-  main {
-    margin: 20px 10px;
-    padding: 16px;
   }
 
   .dropdown {
-    position: relative;
     width: 100%;
-  }
-
-  .dropdown div {
-    padding: 12px 16px;
+    position: relative;
   }
 }
 
-@media (max-width: 480px) {
-  header h1 {
+@media screen and (max-width: 480px) {
+  .brand-text {
     font-size: 18px;
-  }
-
-  form input::placeholder {
-    font-size: 14px;
-  }
-
-  form button {
-    font-size: 15px;
   }
 
   .card h3 {
     font-size: 16px;
   }
-}
 
-#results {
-  padding-bottom: 40px;
-}
-/* ========== Mobile Fixes (max-width: 600px) ========== */
-@media (max-width: 600px) {
-  body {
-    padding: 0 8px;
-  }
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 12px 0;
-    gap: 8px;
+  form input::placeholder {
+    font-size: 13px;
   }
 
-  .logo-box {
-    width: 100%;
-    justify-content: center;
-    padding: 8px;
-  }
-  .logo-box img {
-    height: 36px;
-  }
-  .brand-text {
-    font-size: 18px;
-  }
-
-  #support-link {
-    font-size: 14px;
-  }
-
-  form {
-    flex-direction: column;
-    gap: 8px;
-  }
-  form input,
   form button {
-    width: 100%;
     font-size: 14px;
-    padding: 10px;
-  }
-
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-  }
-
-  .center-btn {
-    margin-top: 16px;
-    width: 100%;
-  }
-  #clear-btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  main {
-    margin: 16px auto;
-    padding: 16px;
-  }
-
-  .card {
-    font-size: 14px;
-    padding: 12px;
-  }
-  .card .details {
-    flex-direction: column;
-    gap: 4px;
-  }
-}
-/* ============ FINAL MOBILE FIX ============ */
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
-    padding: 0 12px;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 12px 0;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .logo-box {
-    flex-direction: column;
-    align-items: center;
-    padding: 12px;
-    width: 100%;
-    border-radius: 16px;
-  }
-
-  .logo-box img {
-    height: 40px;
-  }
-
-  .brand-text {
-    font-size: 18px;
-  }
-
-  form {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-  }
-
-  form input,
-  form button {
-    width: 100%;
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-    display: block;
-  }
-
-  .center-btn {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  #clear-btn {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .card {
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  .card .details {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  #support-link {
-    font-size: 14px;
-    align-self: center;
   }
 }
