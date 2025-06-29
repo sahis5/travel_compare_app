@@ -1,110 +1,100 @@
-/* Reset */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #121212;
-  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f2ff, #f0f9ff);
+  color: #333;
 }
 
-/* Container */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+header h1 img {
+  height: 28px;
+  margin-right: 10px;
+}
+
 main {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Heading */
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-/* Form */
 form {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
-input, button {
+form input, form button {
+  flex: 1 1 200px;
   padding: 14px;
   font-size: 16px;
-  border: 1px solid #333;
-  border-radius: 8px;
-  background: #1e1e1e;
-  color: #f0f0f0;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  border: 1px solid #ccc;
+  border-radius: 12px;
 }
 
-input::placeholder {
-  color: #888;
-}
-
-input:focus {
-  border-color: #007bff;
-  background: #222;
-  outline: none;
-}
-
-/* Buttons */
-button {
-  background: #007bff;
+form button {
+  background-color: #0066ff;
   color: white;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background: #0056b3;
+form button:hover {
+  background-color: #004dc1;
 }
 
-/* Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #1e1e1e;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-
-th, td {
-  padding: 14px 10px;
-  border-bottom: 1px solid #333;
-  text-align: center;
-}
-
-th {
-  background: #2a2a2a;
-  font-weight: 500;
-}
-
-tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Clear Button Container */
 .center-btn {
-  display: flex;
-  justify-content: center;
-  margin: 12px 0;
+  text-align: center;
+  margin: 16px 0;
 }
 
 #clear-btn {
-  background: #444;
-  color: #f0f0f0;
-  padding: 12px 20px;
+  background: #ccc;
+  color: #333;
+  padding: 10px 20px;
   font-size: 14px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 #clear-btn:hover {
-  background: #666;
+  background: #999;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card .details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
 }

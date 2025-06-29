@@ -4,38 +4,40 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
   const from = document.getElementById('from').value.trim();
   const to = document.getElementById('to').value.trim();
 
-  const tbody = document.querySelector('#results tbody');
-  tbody.innerHTML = '<tr><td colspan="4">Loading...</td></tr>';
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = '<p>Loading...</p>';
 
-  // ✅ Correct fetch URL with query string:
   fetch(`https://travel-compare-backend.onrender.com/compare?from=${from}&to=${to}`)
     .then(res => res.json())
     .then(data => {
-      tbody.innerHTML = '';
-      const results = data.results;
+      resultsContainer.innerHTML = '';
 
-      if (results.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4">No results found.</td></tr>';
-      } else {
-        results.forEach(entry => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${entry.mode}</td>
-            <td>${entry.provider}</td>
-            <td>₹${entry.price}</td>
-            <td>${entry.time}</td>
-          `;
-          tbody.appendChild(row);
-        });
+      const results = data.results;
+      if (!results || results.length === 0) {
+        resultsContainer.innerHTML = '<p>No results found.</p>';
+        return;
       }
+
+      results.forEach(entry => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <h3>${entry.provider}</h3>
+          <div class="details">
+            <span><strong>Mode:</strong> ${entry.mode}</span>
+            <span><strong>Price:</strong> ₹${entry.price}</span>
+            <span><strong>Duration:</strong> ${entry.time}</span>
+          </div>
+        `;
+        resultsContainer.appendChild(card);
+      });
     })
     .catch(err => {
       console.error("Error fetching results:", err);
-      tbody.innerHTML = '<tr><td colspan="4">Error fetching results.</td></tr>';
+      resultsContainer.innerHTML = '<p>Error fetching results.</p>';
     });
 });
 
-// Clear Results button
 document.getElementById('clear-btn').addEventListener('click', function () {
-  document.querySelector('#results tbody').innerHTML = '';
+  document.getElementById('results').innerHTML = '';
 });

@@ -1,44 +1,32 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TravelCompare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Magnetik&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main>
-    <h1>
-      <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png"
-       alt="Travel"
-       style="height: 32px; vertical-align: middle; margin-right: 8px;">
-       TravelCompare
-    </h1>
+  <header>
+    <h1><img src="https://cdn-icons-png.flaticon.com/512/854/854894.png" alt="Travel"> TravelCompare</h1>
+    <div>Customer Support | Explore | 🇺🇸 USA</div>
+  </header>
 
+  <main>
     <form id="search-form">
-      <input type="text" id="from" placeholder="Enter departure city or station code" required>
-      <input type="text" id="to" placeholder="Enter destination city or station code" required>
+      <input type="text" id="from" placeholder="From (City or Code)" required>
+      <input type="text" id="to" placeholder="To (City or Code)" required>
       <input type="date" id="date" required>
-      <button type="submit">Compare</button>
+      <button type="submit">Search Flight</button>
     </form>
 
-    <!-- Centered Clear Button -->
     <div class="center-btn">
       <button id="clear-btn" type="button">Clear Results</button>
     </div>
 
-    <table id="results">
-      <thead>
-        <tr>
-          <th>Mode</th>
-          <th>Provider</th>
-          <th>Price (₹)</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div id="results"></div>
   </main>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
