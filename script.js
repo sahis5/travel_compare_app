@@ -33,12 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
               <span><strong>Price:</strong> ₹${entry.price}</span>
               <span><strong>Duration:</strong> ${entry.time}</span>
             </div>
-         `;
-         // Add staggered animation delay
-        card.style.animationDelay = `${index * 0.15}s`;
-        resultsContainer.appendChild(card);
+          `;
+          // ✅ Add staggered animation delay
+          card.style.animationDelay = `${index * 0.15}s`;
+          resultsContainer.appendChild(card);
         });
-
       })
       .catch(() => {
         resultsContainer.innerHTML = '<p>Error fetching results.</p>';
