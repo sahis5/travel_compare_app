@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // LinkedIn click
-  document.getElementById('linkedin-us').addEventListener('click', function (e) {
+  document.getElementById('LinkedIn').addEventListener('click', function (e) {
     e.stopPropagation();
     window.open('https://www.linkedin.com/in/mohammed-sahis-n-p-b08141227', '_blank');
   });
