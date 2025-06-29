@@ -1,7 +1,8 @@
 body {
   margin: 0;
+  height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  background: url('https://images.unsplash.com/photo-1716906374253-75df01da06f5?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1709061645359-3c2f4e8b85fa?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
 }
