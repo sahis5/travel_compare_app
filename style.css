@@ -412,4 +412,32 @@ form button:hover {
     gap: 6px;
   }
 }
+@media screen and (max-width: 480px) {
+  main {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  form {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  form input,
+  form button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #clear-btn {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 
