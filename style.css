@@ -411,4 +411,36 @@ form input:focus {
 header {
   animation: fadeDown 0.8s ease forwards;
 }
+#clear-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* When active, fade in */
+#clear-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Loader hidden by default */
+.loader {
+  display: none;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 

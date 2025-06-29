@@ -10,12 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const from = document.getElementById('from').value.trim();
     const to = document.getElementById('to').value.trim();
 
-    resultsContainer.innerHTML = '<p>Loading...</p>';
+    document.getElementById('loader').style.display = 'block';
+    resultsContainer.innerHTML = '';
+    document.getElementById('clear-btn').classList.remove('visible');
+
+
 
     fetch(`https://travel-compare-backend.onrender.com/compare?from=${from}&to=${to}`)
       .then(res => res.json())
       .then(data => {
         resultsContainer.innerHTML = '';
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('clear-btn').classList.add('visible');
 
         const results = data.results;
         if (!results || results.length === 0) {
@@ -40,13 +46,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       })
       .catch(() => {
+        document.getElementById('loader').style.display = 'none';
         resultsContainer.innerHTML = '<p>Error fetching results.</p>';
       });
   });
 
   document.getElementById('clear-btn').addEventListener('click', () => {
     resultsContainer.innerHTML = '';
+    document.getElementById('clear-btn').classList.remove('visible');
   });
+
 
   supportLink.addEventListener('click', function (e) {
     e.stopPropagation();
