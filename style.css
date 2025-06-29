@@ -1,22 +1,22 @@
-
-  body {
+/* Reset & Base */
+body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
   background-size: cover;
-  color: #333;
+  color: #fff;
 }
 
-
-
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 32px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: relative;
+  color: #000;
 }
 
 header h1 {
@@ -32,8 +32,11 @@ header h1 img {
 
 #support-link {
   position: relative;
+  cursor: pointer;
+  color: #007bff;
 }
 
+/* Dropdown */
 .dropdown {
   display: none;
   position: absolute;
@@ -47,95 +50,13 @@ header h1 img {
 }
 
 .dropdown div {
-  padding: 10px 16px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.dropdown div:hover {
-  background-color: #f1f1f1;
-}
-
-main {
-  max-width: 1000px;
-  margin: 40px auto;
-  background: white;
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-form {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-form input, form button {
-  flex: 1 1 200px;
-  padding: 14px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-}
-
-form button {
-  background-color: #0066ff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-form button:hover {
-  background-color: #004dc1;
-}
-
-.center-btn {
-  text-align: center;
-  margin: 16px 0;
-}
-
-#clear-btn {
-  background: #ccc;
-  color: #333;
-  padding: 10px 20px;
-  font-size: 14px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#clear-btn:hover {
-  background: #999;
-}
-
-.card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.card h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.card .details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
-}
-.dropdown div {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding: 10px 16px;
   cursor: pointer;
   white-space: nowrap;
+  color: #333;
 }
 
 .dropdown div:hover {
@@ -147,45 +68,88 @@ form button:hover {
   height: 16px;
   object-fit: contain;
 }
-.dropdown div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  cursor: pointer;
-  white-space: nowrap;
-}
 
-/* Apply glassmorphism effect */
-input, button {
-  background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-  border-radius: 12px;
-  padding: 14px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-/* Placeholder text in light color */
-input::placeholder {
-  color: #e0e0e0;
-}
-
-/* Hover effect for button */
-form button:hover,
-#clear-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
+/* Main content with glassmorphism */
 main {
   max-width: 1000px;
   margin: 40px auto;
-  background: rgba(255, 255, 255, 0.1); /* transparent background */
+  background: rgba(255, 255, 255, 0.1);
   padding: 24px;
   border-radius: 16px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  color: #fff;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+form input, form button {
+  flex: 1 1 200px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: #e0e0e0;
+}
+
+form button {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover,
+#clear-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Centered Clear Button */
+.center-btn {
+  text-align: center;
+  margin: 16px 0;
+}
+
+#clear-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Result Card */
+.card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: #fff;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card .details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
 }
